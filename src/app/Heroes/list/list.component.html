@@ -1,0 +1,23 @@
+<h3>Listado de Autos</h3>
+
+<ul class="mt-2 list-group">
+    <li class="list-group-item" *ngFor="let nombre of autoNames">{{nombre}}</li>
+</ul>
+
+
+<button class="btn btn-outline-danger mt-2" (click)="removeLastAuto()" *ngIf="autoNames.length > 0">Borrar Ultimo</button>
+
+
+
+<div *ngIf="autoBorrado; else nothingWasDeleted">
+    <h3>Auto Borrado: <small class="text-danger">{{autoBorrado}}</small></h3>
+</div>
+
+<ng-template #nothingWasDeleted>
+    <h3>No ha borrado nada</h3>
+</ng-template>
+
+
+
+
+
